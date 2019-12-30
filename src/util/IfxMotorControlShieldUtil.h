@@ -20,8 +20,11 @@
 
 
 #include <Arduino.h>
-/** For ESP32: */
+/** Espressif ESP32 Arduino framework does not yet support Arduino's analogWrite function.
+We use a custom analogWrite function for ESP32, which can be found at https://github.com/ERROPiX/ESP32_AnalogWrite.git */
+#ifdef ARDUINO_ARCH_ESP32
 #include <analogWrite.h>
+#endif
 
 #ifndef FALSE
 #define FALSE 0
