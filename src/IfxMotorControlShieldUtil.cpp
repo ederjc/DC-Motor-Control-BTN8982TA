@@ -26,11 +26,16 @@ static uint8_t _writeResolution = 8;
 namespace IfxMcs
 {
 	
+#ifndef ARDUINO_ARCH_ESP32
 	// pre-instantiated Halfbridge instances
 	Halfbridge out1 = { .active = FALSE, .pinIn = 3, .pinInh = 12, .pinIs = A0 };
 	Halfbridge out2 = { .active = FALSE, .pinIn = 11, .pinInh = 13, .pinIs = A1 };
+#endif
 	
-	
+#ifdef ARDUINO_ARCH_ESP32
+	Halfbridge out1 = { .active = FALSE, .pinIn = 19, .pinInh = 5, .pinIs = 15 };
+	Halfbridge out2 = { .active = FALSE, .pinIn = 17, .pinInh = 16, .pinIs = 4 };
+#endif
 	
 #ifdef ARDUINO_ARM_XMC
 	//private helpfunction to replace analogWrite on PWM4 for XMC Controllers
