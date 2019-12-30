@@ -20,6 +20,8 @@
 
 
 #include <Arduino.h>
+/** For ESP32: */
+#include <analogWrite.h>
 
 #ifndef FALSE
 #define FALSE 0
