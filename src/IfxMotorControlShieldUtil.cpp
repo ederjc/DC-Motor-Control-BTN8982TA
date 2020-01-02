@@ -33,8 +33,8 @@ namespace IfxMcs
 #endif
 	
 #ifdef ARDUINO_ARCH_ESP32
-	Halfbridge out1 = { .active = FALSE, .pinIn = 19, .pinInh = 5, .pinIs = 15 };
-	Halfbridge out2 = { .active = FALSE, .pinIn = 17, .pinInh = 16, .pinIs = 4 };
+	Halfbridge out1 = { .active = FALSE, .pinIn = 32, .pinInh = 33, .pinIs = 15 };
+	Halfbridge out2 = { .active = FALSE, .pinIn = 25, .pinInh = 26, .pinIs = 4 };
 #endif
 	
 #ifdef ARDUINO_ARM_XMC
